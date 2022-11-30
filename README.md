@@ -1,0 +1,1 @@
+app to search for artist and song information as well as upcoming events.
