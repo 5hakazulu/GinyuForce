@@ -5,20 +5,17 @@ async function getData() {
     const result = await fetch("https://api.genius.com/search?q=Kendrick%20Lamar&access_token=wG0T7APBwvyIwjbLlMF63S5NKLHV1o2UavANFobyb0xTf4ycHh_shy--Cf23G6Wj")
     const parsedResponse = await result.json();
     console.log(parsedResponse)
+
+
+
+    // }
+
+    // getArtistData();
+
+    // async function getArtistEvent (){
+    //     const 
+    // }
 }
-// async function getArtistData (){
-//     const result =  await fetch("https://api.genius.com/search?q=Kendrick%20Lamar&access_token=wG0T7APBwvyIwjbLlMF63S5NKLHV1o2UavANFobyb0xTf4ycHh_shy--Cf23G6Wj")
-//     const parsedResponse = await result.json();
-//     console.log(parsedResponse)
-
-
-// }
-
-// getArtistData();
-
-// async function getArtistEvent (){
-//     const 
-// }
 
 Promise.all([
     fetch("https://api.genius.com/search?q=Kendrick%20Lamar&access_token=wG0T7APBwvyIwjbLlMF63S5NKLHV1o2UavANFobyb0xTf4ycHh_shy--Cf23G6Wj")
@@ -38,7 +35,7 @@ function insert(value) {
 }
 
 
-getData();
+
 
 function getRandomInt(min, max) {
     min = Math.ceil(min);
@@ -47,15 +44,12 @@ function getRandomInt(min, max) {
 }
 
 function setRandomBackgroundImage() {
-
-
     let randNum = getRandomInt(0, 4);
     console.log(randNum);
-
-
-
     document.getElementById("backgroundImage").src = `images/${bgImages[randNum]}`;
 }
+
+getData();
 
 setRandomBackgroundImage();
 
@@ -93,5 +87,3 @@ document.addEventListener("DOMContentLoaded", function () {
             })
     });
 })
-
-
