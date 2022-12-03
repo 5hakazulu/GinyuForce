@@ -1,7 +1,7 @@
 function renderArtistCard(data) {
   const artistArray = data.map(function (data) {
-      const index = artistData.map(object => object.englishName).indexOf(data.englishName)
-      return `<div class="col">
+    const index = artistData.map(object => object.englishName).indexOf(data.englishName)
+    return `<div class="col">
       <div class="card">
         <img src="${planetData[index].thumbImg}" class="card-img-top" alt="...">
         <div class="card-body">
@@ -21,18 +21,18 @@ document.addEventListener("DOMContentLoaded", function () {
     e.preventDefault();
     const searchString = document.getElementsByClassName("search-bar")[0].value;
     const urlEncodedSearchString = encodeURIComponent(searchString);
-  
+
 
     await fetch(`https://api.genius.com/search?q=${urlEncodedSearchString}&access_token=wG0T7APBwvyIwjbLlMF63S5NKLHV1o2UavANFobyb0xTf4ycHh_shy--Cf23G6Wj`)
-    .then(async function(response){
-      return response.json();
-      
-    })
-    .then(function(data){
-      document.getElementsByClassName("artistContainer").innerHTML = data.response.hits[0].result.artist_names
-      console.log(document.getElementsByClassName("artistContainer").innerHTML)
+      .then(async function (response) {
+        return response.json();
 
-    })
+      })
+      .then(function (data) {
+        document.getElementsByClassName("artistContainer").innerHTML = data.response.hits[0].result.artist_names
+        console.log(document.getElementsByClassName("artistContainer").innerHTML)
+
+      })
   })
 })
 
@@ -44,19 +44,19 @@ localStorage.setItem("myKey", "myValue");
 var theItemValue = localStorage.getItem("myKey");
 
 // Check for changes in the local item and log them..
-window.addEventListener('storage', function(event) {
-    console.log('The value for ' + event.key + ' was changed from' + event.oldValue + ' to ' + event.newValue);
+window.addEventListener('storage', function (event) {
+  console.log('The value for ' + event.key + ' was changed from' + event.oldValue + ' to ' + event.newValue);
 }, false);
 
 // Check for HTML5 Storage..
 function supports_html5_storage() {
-    try {
-        return 'localStorage' in window && window['localStorage'] !== null;
-    } catch (e) {
-        return false;
-    }
+  try {
+    return 'localStorage' in window && window['localStorage'] !== null;
+  } catch (e) {
+    return false;
+  }
 }
- supports_html5_storage();
+supports_html5_storage();
 
 
 
@@ -75,7 +75,8 @@ function getRandomInt(min, max) {
 function setRandomBackgroundImage() {
   let randNum = getRandomInt(0, 4);
   console.log(randNum);
-  document.getElementById("backgroundImage").src = `images/${bgImages[randNum]}`;
+  document.body.style.backgroundImage = `url(images/${bgImages[randNum]})`
+  // document.getElementById("backgroundImage").src = `images/${bgImages[randNum]}`;
 }
 
 setRandomBackgroundImage();
