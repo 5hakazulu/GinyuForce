@@ -1,4 +1,5 @@
 .jumbotron {
+    
     margin-top:1rem;
     margin-bottom:3rem;
     font-size:50px;
@@ -6,7 +7,10 @@
     opacity:90%;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
+
 .header{
+    
+    margin:auto;
     padding:20px;
     color:white;
     text-shadow:10px black;
@@ -14,10 +18,11 @@
     text-emphasis:inherit
 }
 .searchBar{
+    display:flex;
     margin:auto;
-    width:50%;
+    width:95%;
     padding-top:20rem;
-    padding-left:10rem;
+    padding-left:15rem;
     padding-right:10rem;
     border:3px whitesmoke;
     opacity:95%;
