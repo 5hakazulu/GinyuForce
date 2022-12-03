@@ -21,8 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     e.preventDefault();
     const searchString = document.getElementsByClassName("search-bar")[0].value;
     const urlEncodedSearchString = encodeURIComponent(searchString);
-    console.log(searchString)
-    console.log(urlEncodedSearchString)
+  
 
     await fetch(`https://api.genius.com/search?q=${urlEncodedSearchString}&access_token=wG0T7APBwvyIwjbLlMF63S5NKLHV1o2UavANFobyb0xTf4ycHh_shy--Cf23G6Wj`)
     .then(async function(response){
@@ -30,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
       
     })
     .then(function(data){
-      document.getElementsByClassName("artistContainer").innerHTML = data.response.hits[0].result.api_path
+      document.getElementsByClassName("artistContainer").innerHTML = data.response.hits[0].result.artist_names
       console.log(document.getElementsByClassName("artistContainer").innerHTML)
 
     })
@@ -38,9 +37,26 @@ document.addEventListener("DOMContentLoaded", function () {
 })
 
 
+// Write a local item..
+localStorage.setItem("myKey", "myValue");
 
+// Read a local item..
+var theItemValue = localStorage.getItem("myKey");
 
+// Check for changes in the local item and log them..
+window.addEventListener('storage', function(event) {
+    console.log('The value for ' + event.key + ' was changed from' + event.oldValue + ' to ' + event.newValue);
+}, false);
 
+// Check for HTML5 Storage..
+function supports_html5_storage() {
+    try {
+        return 'localStorage' in window && window['localStorage'] !== null;
+    } catch (e) {
+        return false;
+    }
+}
+ supports_html5_storage();
 
 
 
