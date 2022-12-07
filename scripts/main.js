@@ -17,8 +17,8 @@ function renderArtistCard(data) {
                       <div class="row m-5">
                           <div class="overflow-auto h-75 d-inline-block">
                               <p>
-                              ${song.result.full_title} 
-                              ${song.result.artist_names}
+                              ${song.result.full_title} <br>
+                              ${song.result.artist_names} <br>
                               ${song.result.release_date_for_display} 
                               
                                
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
       
     })
     .then(function(data){
-      const newArray = data.response.hits.slice(0,3)
+      const newArray = data.response.hits.slice(0,5)
       document.getElementsByClassName("artistContainer")[0].innerHTML =  renderArtistCard(newArray)
 
       // console.log(document.getElementsByClassName("artistContainer").innerHTML)
