@@ -6,7 +6,7 @@ function renderArtistCard(data) {
               <div class="row bg-secondary" style="--bs-bg-opacity: .75;">
 
                   <div class="col-7 m-5 align-self-center">
-                      <img class="w-100 " src="images/labador.jpg" alt="">
+                      <img class="w-100 " src="${song.result.header_image_url}" alt="">
                   </div>
 
                   <div class="col m-3">
@@ -17,7 +17,11 @@ function renderArtistCard(data) {
                       <div class="row m-5">
                           <div class="overflow-auto h-75 d-inline-block">
                               <p>
-                              ${song.result.artist_names} 
+                              ${song.result.full_title} 
+                              ${song.result.artist_names}
+                              ${song.result.release_date_for_display} 
+                              
+                               
  
                               </p>
                           </div>
