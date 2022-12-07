@@ -6,7 +6,7 @@ function renderArtistCard(data) {
         <h5 class="card-title">${song.result.full_title}</h5>
         <p class="card-text">${song.result.artist_names}</p>
         <p class="card-text">${song.result.release_date_for_display} </p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <a href="${song.result.relationships_index_url}" class="btn btn-primary"> Samples: ${song.result.full_title}</a>
       </div>
     </div>`;
     //     return `<div id="ArtistCard" class="row justify-content-center">
