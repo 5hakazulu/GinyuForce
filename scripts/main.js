@@ -38,12 +38,25 @@ function renderArtistCard(data) {
   return artistArray.join("")
 }
 
-
-
-
-
-
-
+//Event Card Maker
+function renderArtistEvents(data) {
+  let artistEvents = data.map(function (data) {
+    return `<div class="card" style="width: 18rem;">
+      <img src="" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"> </h5>
+        <p class="card-text"> </p> 
+        <p class="card-text">  </p>
+        <a href=" " class="btn btn-primary"> Sampling </a>
+        <a href="${data.venue.location}" class="btn btn-primary"> Lyrics </a>
+        
+        
+      </div>
+    </div>
+`
+  })
+  return artistEvents.join("")
+}
 
 
 
@@ -70,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
   })
 })
 
-
+// Event info
 document.addEventListener("DOMContentLoaded", function () {
   const eventSearchButton = document.getElementById("event-search");
   eventSearchButton.addEventListener("click", async function (e) {
@@ -86,7 +99,10 @@ document.addEventListener("DOMContentLoaded", function () {
       .then(function (data) {
         console.log(data)
         document.getElementsByClassName("artistContainer").innerHTML = data[0].venue.location
-        console.log(document.getElementsByClassName("artistContainer").innerHTML)
+        console.log(document.getElementsByClassName("artistContainer").innerHTML);
+        const newEventArray = data;
+        console.log(newEventArray);
+        document.getElementsByClassName("artistContainer")[0].innerHTML = renderArtistEvents(newEventArray);
 
       })
   })
