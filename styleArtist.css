@@ -1,0 +1,54 @@
+.jumbotron {
+
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    font-size: 50px;
+    background-color: #303030;
+    opacity: 90%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.header {
+
+    margin: auto;
+    padding: 20px;
+    color: white;
+    text-shadow: 10px black;
+    font-weight: bold;
+    text-emphasis: inherit
+}
+
+.searchBar {
+    display: flex;
+    margin: auto;
+    width: 95%;
+    padding-top: 10rem;
+    padding-left: 15rem;
+    padding-right: 10rem;
+    border: 3px whitesmoke;
+    opacity: 95%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+#ArtistCard {
+    display: flex;
+    margin: auto;
+    padding-top: 13rem;
+
+}
+
+body {
+    background: url() no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+/* body{
+    background-image:url("images/Background3.png")
+} */
+.btn-dark {
+    background-color: #303030;
+
+}
