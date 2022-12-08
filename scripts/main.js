@@ -41,19 +41,27 @@ function renderArtistCard(data) {
 //Event Card Maker
 function renderArtistEvents(data) {
   let artistEvents = data.map(function (data) {
-    return `<div class="card" style="width: 18rem;">
-      <img src="" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title"> </h5>
-        <p class="card-text"> </p> 
-        <p class="card-text">  </p>
-        <a href=" " class="btn btn-primary"> Sampling </a>
-        <a href="${data.venue.location}" class="btn btn-primary"> Lyrics </a>
-        
-        
+    return `<div class="  col-md-3">
+    <div class="box ">
+      <div class="body">
+        <div class="imgContainer">
+          <img src="${data.artist.image_url}" alt="...">
+        </div>
+        <div class="content d-flex flex-column align-items-center justify-content-center">
+          <div>
+          <h5 class="card-title">${data.artist.name}</h5>
+          <p class="card-text">${data.venue.location} </p> 
+          <p class="card-text">Tickets:${data.offers.status}  </p>
+          <a href="${data.offers.url}" class="btn btn-primary"> Get Tickets </a>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
+
 `
+
+
   })
   return artistEvents.join("")
 }
