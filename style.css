@@ -36,6 +36,8 @@
 
 .artistContainer {
     padding-top: 25rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
     /* padding-left: 15rem;
     padding-right: 10rem; */
 }

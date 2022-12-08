@@ -1,6 +1,6 @@
 function renderArtistCard(data) {
   let artistArray = data.map(function (song) {
-    return `<div class="col-3">
+    return `<div class="  col-md-3">
     <div class="box ">
       <div class="body">
         <div class="imgContainer">
