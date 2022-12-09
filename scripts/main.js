@@ -10,7 +10,7 @@ function renderArtistCard(data) {
         <div class="content d-flex flex-column align-items-center justify-content-center">
           <div>
           <h5 class="card-title">${song.result.title_with_featured}</h5>
-          <p class="card-text">Release date: ${song.result.release_date_for_display} </p> 
+          <p class="card-text">Release date: ${song.result.release_date_for_display ?? 'unavailable'} </p> 
           <p class="card-text">Times viewed on Genius.com: ${song?.result?.stats?.pageviews ?? 'unavailable'} </p>
           <p class="card-text">Language: ${song.result.language} </p> 
           <a href="${song.result.relationships_index_url}" class="btn btn-primary"> Sampling info </a>
