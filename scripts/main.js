@@ -38,7 +38,7 @@ function renderMusicEvents(data) {
 
         <div class="content d-flex flex-column align-items-center justify-content-center m-5">
           <div>
-            <h5 class="card-title">${value?.artist?.name ?? ""}</h5>
+           
             <p class="card-text">Date: ${value?.datetime} </p>
             <p class="card-text">Venue: ${value?.venue?.name} </p> 
             <p class="card-text">${value?.venue?.street_address} <br> ${value?.venue?.location} ${value?.venue?.postal_code} </p>
