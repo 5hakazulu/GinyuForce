@@ -30,33 +30,49 @@ function renderArtistCard(data) {
 
 
 function renderMusicEvents(data) {
- return data.map(function (value) {
-    console.log(value)
-   return `<div class="  col-md-3">
-   <div class="box ">
-     <div class="body">
-       <div class="imgContainer">
-         <img src="${value?.artist?.image_url ?? ''}" alt="...">
-       </div>
-       <div class="content d-flex flex-column align-items-center justify-content-center">
-         <div>
-         <h5 class="card-title">${value?.artist?.name ?? ""}</h5>
-         <p class="card-text">Date: ${value?.datetime} </p>
-         <p class="card-text">Venue: ${value?.venue?.name} </p> 
-         <p class="card-text">${value?.venue?.street_address} <br> ${value?.venue?.location} ${value?.venue?.postal_code} </p>
-         
-         <p class="card-text">Tickets drop on: ${value?.on_sale_datetime ?? ""} </p>
-         <a href="${value?.offers[0]?.url}" class="btn btn-primary"> Get Tickets </a>
-         </div>
-       </div>
-     </div>
-   </div>
- </div>
+  return data.map(function (value) {
+    console.log(value);
+    return `<div class="card col-3 mb-4 m-5">
+    
+      
+      <div class="content d-flex flex-column align-items-center justify-content-center">
+        <div>
+          <h5 class="card-title">${value?.artist?.name ?? ""}</h5>
+          <p class="card-text">Date: ${value?.datetime} </p>
+          <p class="card-text">Venue: ${value?.venue?.name} </p> 
+          <p class="card-text">${value?.venue?.street_address} <br> ${value?.venue?.location} ${value?.venue?.postal_code} </p>
 
-`
+          <p class="card-text">Tickets drop on: ${value?.on_sale_datetime ?? ""} </p>
+          <a href="${value?.offers[0]?.url}" class="btn btn-primary"> Get Tickets </a>
+        </div>
+      </div>
+    
+  </div>`
 
 
- })
+    //   `<div class="  col-md-3">
+    //    <div class="box ">
+    //      <div class="body">
+    //        <div class="Content imgContainer">
+    //          <img src="${value?.artist?.image_url ?? ''}" alt="...">
+    //        </div>
+    //        <div class="content d-flex flex-column align-items-center justify-content-center">
+    //          <div>
+    //          <h5 class="card-title">${value?.artist?.name ?? ""}</h5>
+    //          <p class="card-text">Date: ${value?.datetime} </p>
+    //          <p class="card-text">Venue: ${value?.venue?.name} </p> 
+    //          <p class="card-text">${value?.venue?.street_address} <br> ${value?.venue?.location} ${value?.venue?.postal_code} </p>
+
+    //          <p class="card-text">Tickets drop on: ${value?.on_sale_datetime ?? ""} </p>
+    //          <a href="${value?.offers[0]?.url}" class="btn btn-primary"> Get Tickets </a>
+    //          </div>
+    //        </div>
+    //      </div>
+    //    </div>
+    //  </div>`
+
+
+  })
 }
 
 
@@ -94,12 +110,12 @@ document.addEventListener("DOMContentLoaded", function () {
       const eventJson = await tryFetch.json()
       console.log(eventJson)
       document.getElementsByClassName("artistContainer")[0].innerHTML = renderMusicEvents(eventJson).join('')
-    } catch(e) {
+    } catch (e) {
       console.log(e)
     }
 
-    })
   })
+})
 
 
 
