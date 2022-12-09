@@ -22,6 +22,7 @@
     position: fixed
 }
 
+
 .searchBar {
     display: flex;
     margin: auto;
@@ -41,6 +42,8 @@
     /* padding-left: 15rem;
     padding-right: 10rem; */
 }
+
+
 
 .container-fluid .box {
     position: relative;
