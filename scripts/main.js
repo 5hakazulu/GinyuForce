@@ -1,3 +1,4 @@
+// Render artist info
 function renderArtistCard(data) {
   let artistArray = data.map(function (song) {
     return `<div class="  col-md-3">
@@ -10,9 +11,9 @@ function renderArtistCard(data) {
           <div>
           <h5 class="card-title">${song.result.title_with_featured}</h5>
           <p class="card-text">Release date: ${song.result.release_date_for_display} </p> 
-          <p class="card-text">Times viewed on Genius.com: ${song.result.stats.pageviews} </p>
+          <p class="card-text">Times viewed on Genius.com: ${song?.result?.stats?.pageviews ?? 'unavailable'} </p>
           <p class="card-text">Language: ${song.result.language} </p> 
-          <a href="${song.result.relationships_index_url}" class="btn btn-primary"> Sampling </a>
+          <a href="${song.result.relationships_index_url}" class="btn btn-primary"> Sampling info </a>
           <a href="${song.result.url}" class="btn btn-primary"> Lyrics </a>
           </div>
         </div>
@@ -28,8 +29,10 @@ function renderArtistCard(data) {
 }
 
 
-
+// Render events info
 function renderMusicEvents(data) {
+
+
   return data.map(function (value) {
     console.log(value);
     return `<div class="card col-3 mb-4 m-5">
@@ -72,10 +75,11 @@ function renderMusicEvents(data) {
     //  </div>`
 
 
+
   })
 }
 
-
+// Search function
 document.addEventListener("DOMContentLoaded", function () {
   const myForm = document.getElementById("search-form");
   myForm.addEventListener("submit", async function (e) {
@@ -90,16 +94,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
       })
       .then(function (data) {
-        const newArray = data.response.hits.slice(0, 6)
+        const newArray = data.response.hits.slice(0, 8)
         document.getElementsByClassName("artistContainer")[0].innerHTML = renderArtistCard(newArray)
 
         // console.log(document.getElementsByClassName("artistContainer").innerHTML)
 
       })
+      
   })
 })
 
-// Event info
+// Event button
 document.addEventListener("DOMContentLoaded", function () {
   const eventSearchButton = document.getElementById("event-search");
   eventSearchButton.addEventListener("click", async function (e) {
@@ -114,6 +119,8 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log(e)
     }
 
+
+
   })
 })
 
@@ -126,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
+// Background Image
 const bgImages = ['Concert1.png', 'Concert2.png', 'Concert3.png', 'Concert4.png']
 
 function getRandomInt(min, max) {
